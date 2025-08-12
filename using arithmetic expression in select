@@ -1,0 +1,2 @@
+select ID, name, dept_name, salary/12
+ from instructor
