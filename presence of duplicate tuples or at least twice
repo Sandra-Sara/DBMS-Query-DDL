@@ -1,0 +1,8 @@
+Find all courses that were offered at least twice in 2009
+
+ select T.course_id
+ from course as T
+ where not unique (select R.course_id
+                  from section as R
+                  where T.course_id= R.course_id 
+                  and R.year = 2009);
