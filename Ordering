@@ -1,0 +1,5 @@
+ List in alphabetic order the names of all instructors 
+
+select distinct name
+ from instructor
+ order by name
