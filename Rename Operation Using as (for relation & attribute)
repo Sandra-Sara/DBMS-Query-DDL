@@ -7,6 +7,13 @@
 //Example 2
 
  //Find the names of all instructors who have a higher salary than some instructor in ‘Comp. Sci’.
+
+procedure 1:
+select distinct T. name
+ from instructor as T, instructor as S
+ where T.salary > S.salary and S.dept_name = ‘Comp. Sci.’
+
+procedure 2:
 select name
 from instructor
 where salary> some(select salary
