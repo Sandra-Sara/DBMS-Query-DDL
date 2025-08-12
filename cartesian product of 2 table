@@ -1,3 +1,5 @@
 //Find the Cartesian product instructor X teaches
+
+//A common attribute between the two tables is not necessary for a Cartesian product 
  select *
  from instructor, teaches
