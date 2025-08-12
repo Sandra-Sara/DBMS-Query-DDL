@@ -1,0 +1,6 @@
+  create table course (
+  course_id varchar(5) primary key,     
+  title varchar(20),    
+  dept_name varchar(20),   
+  credits numeric(2,0),         
+ foreign key (dept_name) references department);
