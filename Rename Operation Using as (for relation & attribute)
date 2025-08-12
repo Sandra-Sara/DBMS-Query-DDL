@@ -1,0 +1,14 @@
+//Example 1
+
+ select ID, name, salary/12 as monthly_salary
+ from instructor
+
+
+//Example 2
+
+ //Find the names of all instructors who have a higher salary than some instructor in ‘Comp. Sci’.
+select name
+from instructor
+where salary> some(select salary
+              from instructor
+              where dept_name = 'Comp Sci.')
