@@ -1,0 +1,6 @@
+//Find all instructors whose salary is null.
+
+ select name
+ from instructor
+ where salary is null
+
