@@ -1,0 +1,5 @@
+Find courses that ran in Fall 2009 or in Spring 2010
+
+ (select course_id from section where sem = ‘Fall’ and year = 2009)
+ union
+ (select course_id from section where sem = ‘Spring’ and year = 2010)
