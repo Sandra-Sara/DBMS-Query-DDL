@@ -1,0 +1,5 @@
+ Find the names of instructors whose names are neither “Mozart” nor “Einstein”.
+
+ Select distinct name
+ from instructor
+ Where name not in (‘Mozart’, ’Einstein’);
