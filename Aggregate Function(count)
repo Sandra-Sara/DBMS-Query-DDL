@@ -1,0 +1,5 @@
+ //Find the total number of instructors who teach a course in the Spring 2010 semester
+
+ select count (distinct ID)
+ from teaches
+ where semester = 'Spring' and year = 2010
