@@ -1,0 +1,3 @@
+//Find the Cartesian product instructor X teaches
+ select *
+ from instructor, teaches
