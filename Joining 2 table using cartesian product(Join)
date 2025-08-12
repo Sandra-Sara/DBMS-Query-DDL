@@ -1,0 +1,10 @@
+ For all instructors who have taught some course, find their names 
+and the course ID of the courses they taught.
+ select name, course_id
+ from instructor, teaches
+ where   instructor.ID = teaches.ID
+
+
+//if i use natural join
+select name,course_id
+from instructor natural join teaches
