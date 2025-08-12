@@ -1,0 +1,4 @@
+select section.course_id, semester, year, title
+ from section, course
+ where   section.course_id = course.course_id  and
+ dept_name = ‘Comp. Sci.' 
