@@ -1,0 +1,9 @@
+The exists construct returns the value true if the argument subquery is nonempty.
+
+select course_id
+ from section as S
+ where semester = ’Fall’ and year= 2009 and 
+               exists (select *
+                      from section as T
+                      where semester = ’Spring’ and year= 2010 
+                      and S.course_id= T.course_id);
