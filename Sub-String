@@ -1,0 +1,5 @@
+ Find the names of all instructors whose name includes the substring 
+“dar”.
+select name
+from instructor
+where name like '%dar%'
