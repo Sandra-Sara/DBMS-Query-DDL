@@ -1,0 +1,15 @@
+ Find the number of instructors in each department who teach a course in the Spring 2010 semester.
+
+select count(distinct ID),dept_name
+from instructor,teaches
+where instructor.ID = teaches.ID and Semester = 'Spring' and year = 2010;
+group by dept_name;
+
+          OR
+
+select count(distinct ID),dept_name
+from instructor natural join teaches
+where Semester = 'Spring' and year = 2010;
+group by dept_name;
+
+
