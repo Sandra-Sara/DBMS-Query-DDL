@@ -1,0 +1,18 @@
+Find courses offered in Fall 2009 and in Spring 2010
+
+(select course_id
+from section
+where semester = 'Fall' and year = 2009)
+intersect
+(select course_id
+from section
+where semester = 'Spring' and year = 2010)
+
+               OR
+
+ select distinct course_id
+ from section
+ where semester = 'Fall' and year= 2009 and 
+           course_id in (select course_id
+                        from section
+                        where semester = 'Spring' and year= 2010);
