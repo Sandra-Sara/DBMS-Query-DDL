@@ -1,0 +1,6 @@
+//without duplicate
+ select distinct dept_name
+ from instructor
+//with duplicate
+ select all dept_name
+ from instructor
