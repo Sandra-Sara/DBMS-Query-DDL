@@ -1,0 +1,5 @@
+Find the average salary of instructors in each department
+
+ select dept_name, avg (salary) as avg_salary_dept_wise
+ from instructor
+ group by dept_name;
