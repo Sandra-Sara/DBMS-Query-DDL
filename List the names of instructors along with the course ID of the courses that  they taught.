@@ -1,0 +1,9 @@
+//Normal Procedure
+ select name, course_id
+ from instructor, teaches
+ where instructor.ID = teaches.ID;
+
+
+//Using natural join
+ select name, course_id
+ from instructor natural join teaches;
