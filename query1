@@ -1,1 +1,7 @@
-
+ create table instructor (
+ ID  char(10),              
+name varchar(20) not null,         
+ dept_name  varchar(20),
+ salary numeric(8,2))
+  insert into instructor  values (‘10211’, ’Smith’, ’Biology’, 66000);
+  insert into instructor  values (‘10211’, null, ’Biology’, 66000);
