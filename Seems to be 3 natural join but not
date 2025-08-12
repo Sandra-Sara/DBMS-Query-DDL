@@ -1,0 +1,4 @@
+ select name, title
+ from instructor natural join teaches, course
+ where teaches.course_id = course.course_id;
+
