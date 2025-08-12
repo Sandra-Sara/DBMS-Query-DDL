@@ -1,0 +1,23 @@
+ Find the names of all instructors whose salary is greater than the salary of all instructors in the Biology department.
+
+ select name
+ from instructor
+ where salary > some (select salary
+                      from instructor
+                      where dept_name = ’Biology’);
+
+ Find the names of all instructors whose salary is greater than the salary of all instructors in the Biology department.
+
+  select name
+ from instructor
+ where salary > all (select salary
+                    from instructor
+                    where dept_name = ’Biology’);
+
+Find the departments that have the highest average salary.
+ select dept_name
+ from instructor
+ group by dept_name
+ having avg (salary) >= all (select avg (salary)
+                            from instructor
+                            group by dept_name);
