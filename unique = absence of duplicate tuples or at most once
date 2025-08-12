@@ -1,0 +1,16 @@
+ Find all courses that were offered at most once in 2009
+
+select T.course_id
+ from course as T
+ where unique (select R.course_id
+              from section as R
+              where T.course_id= R.course_id 
+              and R.year = 2009);
+
+          OR
+select T.course id
+ from course as T
+ where 1 = (select count(R.course id)
+          from section as R
+          where T.course id= R.course id and
+          R.year = 2009);
