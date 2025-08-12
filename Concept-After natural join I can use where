@@ -1,0 +1,3 @@
+select *
+from employees natural join departments
+where department_name = 'Sales';
