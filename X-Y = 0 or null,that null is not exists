@@ -1,0 +1,12 @@
+Note that X – Y = Ø   ⇔   X ⊆ Y
+ Find all students who have taken all courses offered in the Biology department.
+
+ select distinct S.ID, S.name
+ from student as S
+ where not exists ( (select course_id
+                                 from course
+                                 where dept_name = ’Biology’)
+                               except
+                                 (select T.course_id
+                                   from takes as T
+                                   where S.ID = T.ID));
