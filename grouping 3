@@ -1,0 +1,13 @@
+Find the names and average salaries of all departments whose average salary is greater than 42000
+
+select name,avg(salary),dept_name
+from instructor
+where avg(salary) > 42000
+group by dept_name;
+         OR
+ select name,dept_name, avg (salary)
+ from instructor
+ group by dept_name
+ having avg (salary) > 42000;
+
+
