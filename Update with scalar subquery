@@ -1,0 +1,8 @@
+a course is successfully completed if the student has a grade that is not ’F’ or null.
+
+ update student S 
+set tot_cred = ( select sum(credits)
+ from takes natural join course
+ where S.ID= takes.ID and 
+takes.grade <> ’F’ and
+ takes.grade is not null);
