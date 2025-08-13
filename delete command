@@ -1,0 +1,29 @@
+ A delete command operates on only one relation. If we want to 
+ delete tuples from several relations, we must use one delete 
+ command for each relation.
+
+
+   Example 1:Delete all instructor
+   delete 
+   from instructor;
+
+  Example 2: Delete all instructors from the Finance department
+  delete from instructor
+  where dept_name= ’Finance’;
+
+  Example 3:Delete all tuples in the instructor relation for those instructors associated with a department located in the Watson building.
+     delete from instructor
+            where dept_name in (select dept_name
+                                from department
+                                where building = ’Watson’);
+  Example 4: Delete all instructors with a salary between $13,000 and $15,000.
+     delete 
+     from instructor
+     where salary between 13000 and 15000;
+
+ Example 5: Delete all instructors whose salary is less than the average salary of instructors.
+
+    delete from instructor
+    where salary< (select avg (salary) from instructor);
+
+
