@@ -1,0 +1,7 @@
+ Display a list of all students in the Comp. Sci. department, along with the course sections, if any, that they have taken in Spring 2009.
+
+
+ select *
+ from (select * from student where dept_name= ’Comp. Sci.’)
+ natural full outer join
+ (select * from takes where semester = ’Spring’ and year = 2009);
