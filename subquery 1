@@ -1,0 +1,15 @@
+ Find the average instructors’ salaries of those departments where the average salary is greater than $42,000.
+
+ //amr
+ select dept_name,avg(salary)
+ from instructor
+ group by dept_name 
+ where avg(salary) > 42,000;
+
+ //main procedure
+
+ select dept_name, avg_salary
+ from (select dept_name, avg (salary) as avg_salary
+      from instructor
+      group by dept_name)
+ where avg_salary > 42000;
