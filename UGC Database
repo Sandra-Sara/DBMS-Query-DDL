@@ -1,0 +1,10 @@
+Universities(univ_id, univ_name, country)
+Subjects(sub_id, sub_title)
+Programs(prog_id, prog_title, univ_id, sub_id, capacity, mincredit)
+Enrollments(stud_id, prog_id, session, expire, state)
+
+capacity = seats in the program
+mincredit = minimum credits required for the degree
+session = academic session (e.g., 2023)
+expire = expiry date of the session enrollment
+state ∈ {ENROLLED, COMPLETED, DROPPED, EXPIRED}
