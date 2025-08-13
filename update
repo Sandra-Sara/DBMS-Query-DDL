@@ -1,0 +1,4 @@
+ Increase salaries of all instructor by 5 percent
+
+ update instructor
+ set salary = salary * 1.05
