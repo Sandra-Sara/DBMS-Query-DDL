@@ -1,0 +1,8 @@
+ insert into course values ('CS-437', 'Database System', 'Comp. Sci.', 4);
+
+                                 OR
+ insert into course (course_id, title, dept_name, credits) values ('CS-437', 'Database Systems', 'Comp. Sci.', 4);
+
+NULL
+
+insert into student values ('3003', 'Green', 'Finance', null);
