@@ -1,0 +1,5 @@
+ Find all students who have not taken a course
+ 
+ select *
+ from student natural left outer join takes
+ where course_id is null
