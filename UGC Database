@@ -8,3 +8,27 @@ mincredit = minimum credits required for the degree
 session = academic session (e.g., 2023)
 expire = expiry date of the session enrollment
 state ∈ {ENROLLED, COMPLETED, DROPPED, EXPIRED}
+
+Universities
+PRIMARY KEY (univ_id)
+univ_name NOT NULL, usually UNIQUE (name uniqueness)
+country NOT 
+
+Subjects
+PRIMARY KEY (sub_id)
+sub_title NOT NULL, typically UNIQUE
+
+Programs
+PRIMARY KEY (prog_id)
+FOREIGN KEY (univ_id) → Universities(univ_id)
+FOREIGN KEY (sub_id) → Subjects(sub_id)
+capacity CHECK (capacity >= 0)
+mincredit CHECK (mincredit > 0)
+(prog_title, univ_id) could be UNIQUE (no duplicate-named program in same university) — optional but reasonable.
+
+Enrollments
+Natural key: one record per (stud_id, prog_id, session) ⇒ PRIMARY KEY (stud_id, prog_id, session)
+FOREIGN KEY (prog_id) → Programs(prog_id)
+state CHECK (state ∈ {‘ENROLLED’, ‘COMPLETED’, ‘DROPPED’, ‘EXPIRED’})
+expire NOT NULL
+session NOT NULL (numeric or text; if numeric, can add CHECK session >= 1900 etc.)
