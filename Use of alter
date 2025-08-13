@@ -1,0 +1,8 @@
+Remove the mincredit column from the programs table.
+
+alter table programs drop column mincredit;
+
+Add credits_earn and GPA to Enrollments.
+
+alter table Enrollments add column credits_earn numeric (2,0);
+alter table Enrollments add column GPA numeric(1,2);
