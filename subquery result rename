@@ -1,0 +1,8 @@
+We can give the subquery result relation a name, and rename the attributes, using the as clause
+
+select dept_name, avg_salary
+ from (select dept_name, avg (salary) 
+      from instructor
+      group by dept_name) 
+           as dept_avg (dept_name,  avg_salary)
+           where avg_salary > 42000; 
