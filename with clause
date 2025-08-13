@@ -1,0 +1,8 @@
+ Find all departments with the maximum budget 
+
+ with max_budget (value) as 
+(select max(budget)
+ from department)
+ select budget
+ from department, max_budget
+ where department.budget = max_budget.value;
