@@ -1,0 +1,7 @@
+Find the names of each instructor, along with their salary and the average salary in their department
+
+ select name, salary, avg_salary
+ from instructor I1, 
+lateral (select avg(salary) as avg_salary
+        from instructor I2
+        where I2.dept_name= I1.dept_name);
