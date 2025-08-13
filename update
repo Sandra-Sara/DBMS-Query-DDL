@@ -2,3 +2,27 @@
 
  update instructor
  set salary = salary * 1.05
+
+
+Increase the salary of the instructors by 7 percent with salary of less than $70,000
+
+ update instructor
+ set salary = salary * 1.05
+ where salary <= 70000;
+
+
+Give a 5 percent salary raise to instructors whose salary is less than average.
+
+ update instructor
+ set salary = salary * 1.05
+ where salary < (select avg (salary)
+                from instructor);
+
+ Increase salaries of instructors whose salary is over $90,000 by 3%, and all others receive a 5% raise
+
+ update instructor
+ set salary = salary * 1.03
+ where salary > 100000;
+ update instructor
+ set salary = salary * 1.05
+ where salary <= 100000;
