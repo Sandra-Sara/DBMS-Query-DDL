@@ -1,1 +1,8 @@
+find the maximum across all departments of the total salary at each department.
 
+select max (tot_salary)
+ from (select dept_name, sum(salary) 
+ from instructor
+ group by dept_name) 
+           as 
+dept_total (dept_name,  tot_salary)
