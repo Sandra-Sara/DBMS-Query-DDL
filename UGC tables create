@@ -1,0 +1,39 @@
+-- 1) Universities
+CREATE TABLE Universities (
+  univ_id    INT PRIMARY KEY,
+  univ_name  VARCHAR(200) NOT NULL UNIQUE,
+  country    VARCHAR(100) NOT NULL
+);
+
+-- 2) Subjects
+CREATE TABLE Subjects (
+  sub_id     INT PRIMARY KEY,
+  sub_title  VARCHAR(150) NOT NULL UNIQUE
+);
+
+-- 3) Programs
+CREATE TABLE Programs (
+  prog_id     INT PRIMARY KEY,
+  prog_title  VARCHAR(200) NOT NULL,
+  univ_id     INT NOT NULL,
+  sub_id      INT NOT NULL,
+  capacity    INT NOT NULL CHECK (capacity >= 0),
+  mincredit   INT NOT NULL CHECK (mincredit > 0),
+  UNIQUE (prog_title, univ_id),
+  FOREIGN KEY (univ_id) REFERENCES Universities(univ_id),
+  FOREIGN KEY (sub_id)  REFERENCES Subjects(sub_id)
+);
+
+-- 4) Enrollments
+CREATE TABLE Enrollments (
+  stud_id   INT NOT NULL,
+  prog_id   INT NOT NULL,
+  session   INT NOT NULL,
+  expire    DATE NOT NULL,
+  state     VARCHAR(20) NOT NULL
+            CHECK (state IN ('ENROLLED','COMPLETED','DROPPED','EXPIRED')),
+  PRIMARY KEY (stud_id, prog_id, session),
+  FOREIGN KEY (prog_id) REFERENCES Programs(prog_id)
+);
+
+
